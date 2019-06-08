@@ -85,7 +85,9 @@ class _HomeState extends State<Home> {
                   child: Text("Animated",style: TextStyle(color: Colors.white),),),
                   
                 ),
-                )
+                ),
+                SizedBox(width: 10.0,),
+                Text("30+ Stories",style: TextStyle(color: Colors.white),),
               ],
             ),),
           ],
