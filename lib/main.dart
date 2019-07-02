@@ -21,7 +21,7 @@ class MyApp extends StatefulWidget {
 //var widgetAspectRatio = cardAspectRatio * 1.2;
 
 class _MyAppState extends State<MyApp> {
-  var currentPage = images.length- 1.0;
+  var currentPage = images.length - 1.0;
 
   @override
   Widget build(BuildContext context) {
@@ -43,24 +43,38 @@ class _MyAppState extends State<MyApp> {
               end: Alignment.topCenter,
               tileMode: TileMode.clamp)),
       child: Scaffold(
-        appBar: AppBar(
-          title: Text("testing"),
-          leading: Drawer(
-            child: IconButton(
-              icon: Icon(
-                Icons.menu,
-              ),onPressed: (){},
-            ),
+        drawer: Drawer(
+          child: Column(
+            children: <Widget>[
+              UserAccountsDrawerHeader(decoration: BoxDecoration(gradient: LinearGradient(
+                  colors: [
+                    Colors.deepPurple[700],
+                    Colors.purple[500]
+                  ],
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  tileMode: TileMode.clamp)),
+                  accountName: Text("id"), accountEmail: Text("name")
+              ),
+              Text("seeee"),
+            ],
           ),
         ),
-        backgroundColor: Colors.transparent,
-
+        appBar: AppBar(
+            title: Text("testing"),
+            centerTitle: true,
+            backgroundColor: Colors.purple[500]),
+        backgroundColor: Colors.white70,
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              SizedBox(height: 30,),
-              Text("killer status",style:TextStyle(fontSize: 35,color: Colors.white),),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 30,
+              ),
+              //Text("killer status",style:TextStyle(fontSize: 35,color: Colors.white),),
+              SizedBox(
+                height: 20,
+              ),
               Stack(
                 children: <Widget>[
                   CardScrollWidget(currentPage),
